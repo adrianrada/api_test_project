@@ -1,0 +1,30 @@
+@Problem_HostAddress = http://localhost:5248
+
+GET {{Problem_HostAddress}}/tasks
+Accept: application/json
+
+###
+
+POST {{Problem_HostAddress}}/tasks
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Test Task"
+}
+
+###
+
+PUT {{Problem_HostAddress}}/tasks/9afe762c-96f9-42e7-90d8-2ac7cb88d570
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Old Task",
+  "isCompleted": true
+}
+
+###
+
+DELETE {{Problem_HostAddress}}/tasks/9afe762c-96f9-42e7-90d8-2ac7cb88d570
+Accept: application/json

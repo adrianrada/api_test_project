@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\bogda\\Documents\\PROJECTS\\QA Engineer - API test automation\\Problem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B52F5934-9EF6-44F8-BB7A-C02632E41E20}|Problem.csproj|c:\\users\\bogda\\documents\\projects\\qa engineer - api test automation\\problem\\problem.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{B52F5934-9EF6-44F8-BB7A-C02632E41E20}|Problem.csproj|solutionrelative:problem.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B52F5934-9EF6-44F8-BB7A-C02632E41E20}|Problem.csproj|c:\\users\\bogda\\documents\\projects\\qa engineer - api test automation\\problem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B52F5934-9EF6-44F8-BB7A-C02632E41E20}|Problem.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B52F5934-9EF6-44F8-BB7A-C02632E41E20}|Problem.csproj|c:\\users\\bogda\\documents\\projects\\qa engineer - api test automation\\problem\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B52F5934-9EF6-44F8-BB7A-C02632E41E20}|Problem.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Problem",
+              "DocumentMoniker": "C:\\Users\\bogda\\Documents\\PROJECTS\\QA Engineer - API test automation\\Problem\\Problem.csproj",
+              "RelativeDocumentMoniker": "Problem.csproj",
+              "ToolTip": "C:\\Users\\bogda\\Documents\\PROJECTS\\QA Engineer - API test automation\\Problem\\Problem.csproj",
+              "RelativeToolTip": "Problem.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-17T16:22:22.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\bogda\\Documents\\PROJECTS\\QA Engineer - API test automation\\Problem\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\bogda\\Documents\\PROJECTS\\QA Engineer - API test automation\\Problem\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-17T16:20:24.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\bogda\\Documents\\PROJECTS\\QA Engineer - API test automation\\Problem\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\bogda\\Documents\\PROJECTS\\QA Engineer - API test automation\\Problem\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-17T16:20:24.123Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
