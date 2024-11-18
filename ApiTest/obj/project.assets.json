@@ -472,6 +472,15 @@
           "lib/netstandard2.0/NuGet.Frameworks.dll": {}
         }
       },
+      "RandomString4Net/1.8.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/RandomString4Net.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/RandomString4Net.dll": {}
+        }
+      },
       "System.Reflection.Metadata/1.6.0": {
         "type": "package",
         "compile": {
@@ -1179,6 +1188,46 @@
         "nuget.frameworks.nuspec"
       ]
     },
+    "RandomString4Net/1.8.0": {
+      "sha512": "K1BGz/+TI1BheJocKGv2OLa5clA8sSZfnDicTXgBIXWz59RT26ektCn7yvVv5AeNYAMA+LMPYSRQwHRztM/52w==",
+      "type": "package",
+      "path": "randomstring4net/1.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net20/RandomString4Net.dll",
+        "lib/net35/RandomString4Net.dll",
+        "lib/net40/RandomString4Net.dll",
+        "lib/net45/RandomString4Net.dll",
+        "lib/net451/RandomString4Net.dll",
+        "lib/net452/RandomString4Net.dll",
+        "lib/net46/RandomString4Net.dll",
+        "lib/net461/RandomString4Net.dll",
+        "lib/net462/RandomString4Net.dll",
+        "lib/net47/RandomString4Net.dll",
+        "lib/net471/RandomString4Net.dll",
+        "lib/net472/RandomString4Net.dll",
+        "lib/net48/RandomString4Net.dll",
+        "lib/net5.0-windows7.0/RandomString4Net.dll",
+        "lib/net5.0/RandomString4Net.dll",
+        "lib/net6.0-windows7.0/RandomString4Net.dll",
+        "lib/net6.0/RandomString4Net.dll",
+        "lib/net7.0-windows7.0/RandomString4Net.dll",
+        "lib/net7.0/RandomString4Net.dll",
+        "lib/net8.0-windows7.0/RandomString4Net.dll",
+        "lib/net8.0/RandomString4Net.dll",
+        "lib/netcoreapp2.0/RandomString4Net.dll",
+        "lib/netcoreapp2.1/RandomString4Net.dll",
+        "lib/netcoreapp2.2/RandomString4Net.dll",
+        "lib/netcoreapp3.0/RandomString4Net.dll",
+        "lib/netcoreapp3.1/RandomString4Net.dll",
+        "lib/netstandard2.0/RandomString4Net.dll",
+        "lib/netstandard2.1/RandomString4Net.dll",
+        "randomstring4net.1.8.0.nupkg.sha512",
+        "randomstring4net.nuspec"
+      ]
+    },
     "System.Reflection.Metadata/1.6.0": {
       "sha512": "COC1aiAJjCoA5GBF+QKL2uLqEBew4JsCkQmoHKbN3TlOZKa2fKLz5CpiRQKDz0RsAOEGsVKqOD5bomsXq/4STQ==",
       "type": "package",
@@ -1362,6 +1411,7 @@
     "net8.0": [
       "Meziantou.Extensions.Logging.Xunit >= 1.0.7",
       "Microsoft.NET.Test.Sdk >= 17.8.0",
+      "RandomString4Net >= 1.8.0",
       "Xunit.Extensions.Logging >= 1.1.0",
       "coverlet.collector >= 6.0.0",
       "xunit >= 2.9.2",
@@ -1419,6 +1469,10 @@
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[17.8.0, )"
+          },
+          "RandomString4Net": {
+            "target": "Package",
+            "version": "[1.8.0, )"
           },
           "Xunit.Extensions.Logging": {
             "target": "Package",

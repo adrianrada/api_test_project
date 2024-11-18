@@ -15,13 +15,14 @@ namespace ApiTest
         private readonly HttpClient _httpClient;
         private readonly ILogger<ApiService> _logger;
 
-        public ApiService(ILogger<ApiService> logger)
+        public ApiService(string url, ILogger<ApiService> logger)
         {
             _logger = logger;
             _httpClient = new HttpClient
             {
                 Timeout = TimeSpan.FromSeconds(10),
-                BaseAddress = new Uri("https://localhost:7246/tasks")
+                //BaseAddress = new Uri("https://localhost:7246/tasks")
+                BaseAddress = new Uri($"{url}")
             };
             _httpClient.DefaultRequestHeaders.Accept.Clear();
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -29,6 +30,7 @@ namespace ApiTest
 
         public async Task ClearAllTasksAsync(string endpoint, List<JObject> taskList)
         {
+
             foreach (JObject task in taskList)
             {
                 var itemId = (string)task.Property("id")!.Value!;
@@ -56,7 +58,11 @@ namespace ApiTest
             return await _httpClient.PostAsync(endpoint, content);
         }
 
-        // Method to perform a PUT request
+        /// <summary>
+        /// Send PUT to <see cref="endpoint"/> endpoint
+        /// </summary>
+        /// <param name="endpoint">endpoint to check</param>
+        /// <returns>HttpResponseMessage</returns>
         public async Task<HttpResponseMessage> PutAsync(string endpoint, string jsonContent)
         {
             var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
@@ -65,12 +71,22 @@ namespace ApiTest
             return await _httpClient.PutAsync(endpoint, content);
         }
 
+        /// <summary>
+        /// Send GET to <see cref="endpoint"/> endpoint
+        /// </summary>
+        /// <param name="endpoint">endpoint to check</param>
+        /// <returns>HttpResponseMessage</returns>
         public new async Task<HttpResponseMessage> GetAsync(string endpoint)
         {
             _logger.LogInformation($"GET resources from endpoint {endpoint}");
             return await _httpClient.GetAsync(endpoint);
         }
 
+        /// <summary>
+        /// Send DELETE to <see cref="endpoint"/> to delete specific resource. Will need to add the resource id to the endpoint uri.
+        /// </summary>
+        /// <param name="endpoint">endpoint delete</param>
+        /// <returns>HttpResponseMessage</returns>
         public new async Task<HttpResponseMessage> DeleteAsync(string endpoint)
         {
             _logger.LogInformation($"DELETE endpoint {endpoint}");

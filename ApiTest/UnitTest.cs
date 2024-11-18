@@ -13,16 +13,41 @@ using Xunit.Abstractions;
 using Meziantou.Extensions.Logging.Xunit;
 using System.Runtime.CompilerServices;
 using RandomString4Net;
+using System.Reflection.Metadata;
+using Microsoft.VisualStudio.TestPlatform.Utilities;
 
 namespace ApiTest
 {
-    public class UnitTest1
+    #region Test Fixtures
+    public class TestsFixture : IDisposable
     {
+        public TestsFixture()
+        {
+            // Do "global" initialization here; Only called once
+            // to be implemented in a future release
+        }
+
+        public void Dispose() 
+        {
+            // Do "global" teardown here; Only called once.
+            // to be implemented in a future release
+        }
+    }
+    #endregion
+
+    #region Test Class
+
+    public class UnitTest1 : IClassFixture<TestsFixture>
+    {
+
+        #region Test Class initialization
 
         private readonly ILogger<UnitTest1> _logger_test;
         private readonly ILogger<ApiService> _logger_api;
         private readonly ApiService _apiService;
-        
+        // private readonly string _urlHttps = "https://localhost:7246";
+        private readonly string _urlHttp = "http://localhost:5248";
+
         // private string taskNameMax = RandomString.GetString(Types.ALPHABET_LOWERCASE, 100);
 
         public UnitTest1(ITestOutputHelper output)
@@ -35,10 +60,9 @@ namespace ApiTest
 
             _logger_test = loggerFactory.CreateLogger<UnitTest1>();
             _logger_api = loggerFactory.CreateLogger<ApiService>();
-
-            _apiService = new ApiService(_logger_api);
-            string taskNameLong = RandomString.GetString(Types.ALPHABET_LOWERCASE, 101)!;
+            _apiService = new ApiService(_urlHttp, _logger_api);
         }
+        #endregion
 
         #region Scenario 1 - Test the retrieval of tasks 
 
@@ -215,4 +239,5 @@ namespace ApiTest
         }
         #endregion
     }
+    #endregion
 }
