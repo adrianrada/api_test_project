@@ -12,6 +12,7 @@ using Xunit;
 using Xunit.Abstractions;
 using Meziantou.Extensions.Logging.Xunit;
 using System.Runtime.CompilerServices;
+using RandomString4Net;
 
 namespace ApiTest
 {
@@ -21,6 +22,8 @@ namespace ApiTest
         private readonly ILogger<UnitTest1> _logger_test;
         private readonly ILogger<ApiService> _logger_api;
         private readonly ApiService _apiService;
+        
+        // private string taskNameMax = RandomString.GetString(Types.ALPHABET_LOWERCASE, 100);
 
         public UnitTest1(ITestOutputHelper output)
         {
@@ -34,6 +37,7 @@ namespace ApiTest
             _logger_api = loggerFactory.CreateLogger<ApiService>();
 
             _apiService = new ApiService(_logger_api);
+            string taskNameLong = RandomString.GetString(Types.ALPHABET_LOWERCASE, 101)!;
         }
 
         #region Scenario 1 - Test the retrieval of tasks 
@@ -42,11 +46,10 @@ namespace ApiTest
         [Trait("Category", "Scenario 1 - Test the retrieval of tasks")]
         public async Task Test1GetResponseOk()
         {
-            _logger_test.LogInformation("Starting TEST1");
             HttpResponseMessage response = await _apiService.GetAsync("/tasks");
-
+            _logger_test.LogInformation($"Received response is {response.ReasonPhrase}");
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-            _logger_test.LogInformation("Ending TEST1");
+
         }
 
         [Fact]
@@ -54,7 +57,10 @@ namespace ApiTest
         public async Task Test2GetResponseJsonFormat()
         {
             HttpResponseMessage response = await _apiService.GetAsync("/tasks");
+            _logger_test.LogInformation($"Received response is {response.ReasonPhrase}");
+            
             var responseFormat = response.Content.Headers.ContentType!;
+            
             Assert.True(responseFormat.MediaType == "application/json",
                 $"Response is not in json format, actual response format is {responseFormat.MediaType}");
         }
@@ -63,13 +69,16 @@ namespace ApiTest
         [Trait("Category", "Scenario 1 - Test the retrieval of tasks")]
         public async Task Test3GetEmptyListAfterCleanup()
         {
-            List<JObject> taskListBeforeCleanup = await _apiService.GetListAsync("/tasks");
+            List<JObject> taskList = await _apiService.GetListAsync("/tasks");
+            _logger_test.LogInformation($"Current number of tasks: {taskList.Count}");
 
-            await _apiService.ClearAllTasksAsync("/tasks", taskListBeforeCleanup);
+            await _apiService.ClearAllTasksAsync("/tasks", taskList);
 
-            List<JObject> taskListAfterCleanup = await _apiService.GetListAsync("/tasks");
+            taskList = await _apiService.GetListAsync("/tasks");
 
-            Assert.Empty(taskListAfterCleanup);
+            _logger_test.LogInformation($"Current number of tasks: {taskList.Count}");
+
+            Assert.Empty(taskList);
         }
 
         #endregion
@@ -78,16 +87,17 @@ namespace ApiTest
 
         [Theory]
         [Trait("Category", "Scenario 2 - Test the creation of a new task")]
-        [InlineData("{\"name\":\"task41\", \"isCompleted\": false}", HttpStatusCode.OK)]
-        [InlineData("{\"name\":\"task42\", \"isCompleted\": true}", HttpStatusCode.OK)]
-        [InlineData("{\"name\":\"task43\", \"isCompleted\": \"IsFalse\"}", HttpStatusCode.BadRequest)]
-        [InlineData("{\"name\":\"\", \"isCompleted\": \"IsFalse\"}", HttpStatusCode.BadRequest)]
-        [InlineData("{\"name\":\"tasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktask\",\"isCompleted\": false}", 
+        [InlineData("New task, completion false", "{\"name\":\"task41\", \"isCompleted\": false}", HttpStatusCode.OK)]
+        [InlineData("New task, completion true", "{\"name\":\"task42\", \"isCompleted\": true}", HttpStatusCode.OK)]
+        [InlineData("New task, wrong completion state", "{\"name\":\"task43\", \"isCompleted\": \"IsFalse\"}", HttpStatusCode.BadRequest)]
+        [InlineData("New task, wrong task name", "{\"name\":\"\", \"isCompleted\": false}", HttpStatusCode.BadRequest)]
+        [InlineData("New task, name has 100 characters", "{\"name\":\"tasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktask\",\"isCompleted\": false}", 
             HttpStatusCode.OK)]
-        [InlineData("{\"name\":\"tasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktask1\",\"isCompleted\": false}",
+        [InlineData("New task, name has 101 characters", "{\"name\":\"tasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktask1\",\"isCompleted\": false}",
             HttpStatusCode.BadRequest)]
-        public async Task Test4CreateTask(string task, HttpStatusCode expected)
+        public async Task Test4CreateTask(string testScope, string task, HttpStatusCode expected)
         {
+            _logger_test.LogInformation($"Test objective: {testScope}");
             var response = await _apiService.PostAsync("/tasks", task);
 
             Assert.Equal(expected, response.StatusCode);
