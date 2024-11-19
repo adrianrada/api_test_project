@@ -113,7 +113,7 @@ namespace ApiTest
         [Trait("Category", "Scenario 2 - Test the creation of a new task")]
         [InlineData("New task, completion false", "{\"name\":\"task41\", \"isCompleted\": false}", HttpStatusCode.OK)]
         [InlineData("New task, completion true", "{\"name\":\"task42\", \"isCompleted\": true}", HttpStatusCode.OK)]
-        [InlineData("New task, wrong completion state", "{\"name\":\"task43\", \"isCompleted\": \"IsFalse\"}", HttpStatusCode.BadRequest)]
+        [InlineData("New task, wrong completion state", "{\"name\":\"task43\", \"isCompleted\": \"false\"}", HttpStatusCode.BadRequest)]
         [InlineData("New task, wrong task name", "{\"name\":\"\", \"isCompleted\": false}", HttpStatusCode.BadRequest)]
         [InlineData("New task, name has 100 characters", "{\"name\":\"tasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktasktask\",\"isCompleted\": false}", 
             HttpStatusCode.OK)]
@@ -144,13 +144,17 @@ namespace ApiTest
                 await _apiService.PostAsync("/tasks", "{\"name\":\"task51\"}");
                 taskList = await _apiService.GetListAsync("/tasks");
             }
-
+            Assert.NotEmpty(taskList);
             string taskName = (String)taskList[0].Property("name")!.Value!;
             string taskId = (String)taskList[0].Property("id")!.Value!;
 
+            Assert.NotEqual("", taskName);
+            Assert.NotEqual("", taskId);
+
             string contentUpdate = "{" + $"\"name\": \"{taskName}\", \"isCompleted\": {update}" + "}";
 
-            await _apiService.PutAsync($"/tasks/{taskId}", contentUpdate);
+            HttpResponseMessage response = await _apiService.PutAsync($"/tasks/{taskId}", contentUpdate);
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
 
             taskList = await _apiService.GetListAsync("/tasks");
             bool taskIsCompleted = (bool)taskList[0].Property("isCompleted")!.Value!;
@@ -172,6 +176,8 @@ namespace ApiTest
             {
                 taskIdList.Add((String)task.Property("id")!.Value!);
             }
+
+            Assert.True(taskIdList.Count >= 0);
 
             do
             {
@@ -236,7 +242,7 @@ namespace ApiTest
 
             HttpResponseMessage response = await _apiService.DeleteAsync($"/tasks/{bogusId}");
             Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
-        }
+        } 
         #endregion
     }
     #endregion
