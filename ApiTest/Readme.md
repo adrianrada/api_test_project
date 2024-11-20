@@ -1,4 +1,4 @@
-# API Automated Testing Framework
+# **API Automated Testing Framework**
 
 This solution contains 2 different components.
 
@@ -6,11 +6,11 @@ This solution contains 2 different components.
 2. The implementation of a simple HTTPClient type class that will handle the requests,
 with some extra functionalities.
 
-## Installation
+## **Installation**
 
 Download the project or clone the github repository and import the solution to Visual Studio Community 2022.
 
-## Usage
+## **Usage**
 
 To run the tests, either execute them directly from the Visual Studio Test Explorer or from cmd using the below
 command after having built the solution first.
@@ -19,9 +19,9 @@ command after having built the solution first.
 dotnet test path\to\bin\Debug\net8.0\UnitTest.dll
 ```
 
-## Future Improvements
+## **Future Improvements**
 
-1. Optimize Data Handling
+1. **Optimize Data Handling**
 
 For tests that require various data inputs, instead of adding InLineData for a Theory we could consider creating a
 dedicated data class with all necessary information and added it as ClassData in the test or use MemberData attribute
@@ -30,21 +30,21 @@ to load data from a test class property.
 See:
 [Creating parameterised tests in xUnit](https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/)
 
-2. Adding Test Fixtures
+2. **Adding Test Fixtures**
 
 Adding setup/teardown methods at test class and/or test case level to ensure that some preconditions are met
 (e.g. check the server is up and running, make sure that at least one task exists on the server) and to
 perform a cleanup of the test environment after execution finishes (e.g. shut down the web server, dispose the
 http client used during testing)
 
-3. Improving test execution performance
+3. **Improving test execution performance**
 
 By default, test cases are executed sequentially, which can bring significant performance issues if the number
 and/or complexity of the test scenarios increases in time.
 
 In order to mitigate this, we could use the following strategies:
 
-    a) Parallel execution
+    a) **Parallel execution**
     
     Group test suites into separate collections by creating different test classes that would run parallel
     against each other.
@@ -54,7 +54,7 @@ In order to mitigate this, we could use the following strategies:
     See :
     [xUnit - Running Tests in Parallel](https://xunit.net/docs/running-tests-in-parallel.html)
 
-    b) Distribute test executions to multiple machines
+    b) **Distribute test executions to multiple machines**
 
     Group test suites into different sets based on test domain or priority and use different hosts to execute
     the newly created scenarios (either from command line or from a CI/CD environment)
@@ -63,7 +63,7 @@ In order to mitigate this, we could use the following strategies:
     [Selective Unit Tests](https://learn.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests?pivots=xunit#xunit-examples)
     [Speeding up Unit Test Execution in TFS](https://devblogs.microsoft.com/devops/speeding-up-unit-test-execution-in-tfs/)
 
-4. Logging and Reporting
+4. **Logging and Reporting**
 
 I've currently implemented two logger instances of the ILogger interface and used LoggerFactory to instantiate them
 in the test class constructor.
@@ -82,26 +82,26 @@ command is executed.
 dotnet test ApiTest.dll --logger:html
 ```
 
-5. Combining Multiple API Requests
+5. **Combining Multiple API Requests**
 
 For more complex scenarios we could try to chain together multiple API requests by using one of the following methods:
 
-    a) Asynchronous calls
+    a) **Asynchronous calls**
     
     Create methods with the async modifier and use await when parsing through an enumerable that contains different data
     that we want to send or query the server with.
 
-    b) Running requests in parallel
+    b) **Running requests in parallel**
 
     Using Task.WhenAll() method on tasks of the same type (can apply this method on batches of multiple requests for further
     optimization).
 
-    c) Updating the API endpoint
+    c) **Updating the API endpoint**
 
     We could also take into account optimizations at server side and create an endpoint that could handle multiple 
     simultaneous requests.
 
-    d) Use JSON batching
+    d) **Use JSON batching**
 
     This method allows us to enhance our application's performance by combining up to 20 requests in a single JSON object,
     with various modifiers to allow sequencing of requests.
@@ -110,7 +110,7 @@ For more complex scenarios we could try to chain together multiple API requests 
     [How To Send Many Requests In Parallel In ASP.NET CORE](https://www.michalbialecki.com/2018/04/19/how-to-send-many-requests-in-parallel-in-asp-net-core/)
     [JSON Batching](https://learn.microsoft.com/en-us/graph/json-batching)
 
-6. Create a CI/CD pipeline
+6. **Create a CI/CD pipeline**
 
 By integrating this project into github and with the usage of webhooks, we could define a CI/CD pipeline that should be
 triggered when merging new changes into the main branch of the repository. The pipeline would include stages for building
