@@ -115,5 +115,5 @@ triggered when merging new changes into the main branch of the repository. The p
 the solution, starting the web server, initiating test execution, saving and sharing the test report and cleaning up the
 test environment.
 
-See:__
+See:<br />
 [Trigger Jenkins Build When Pull Request Is Merged In GitHub](https://stackoverflow.com/questions/64050510/trigger-jenkins-build-when-pull-request-is-merged-in-github)
