@@ -27,7 +27,7 @@ For tests that require various data inputs, instead of adding InLineData for a T
 dedicated data class with all necessary information and added it as ClassData in the test or use MemberData attribute
 to load data from a test class property.
 
-See:__
+See:<br />
 [Creating parameterised tests in xUnit](https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/)
 
 2. **Adding Test Fixtures**
