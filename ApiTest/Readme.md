@@ -27,7 +27,7 @@ For tests that require various data inputs, instead of adding InLineData for a T
 dedicated data class with all necessary information and added it as ClassData in the test or use MemberData attribute
 to load data from a test class property.
 
-See:
+See:__
 [Creating parameterised tests in xUnit](https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/)
 
 2. **Adding Test Fixtures**
@@ -56,9 +56,9 @@ In order to mitigate this, we could use the following strategies:
     Group test suites into different sets based on test domain or priority and use different hosts to execute
     the newly created scenarios (either from command line or from a CI/CD environment)
 
-See:
-[xUnit - Running Tests in Parallel](https://xunit.net/docs/running-tests-in-parallel.html)
-[Selective Unit Tests](https://learn.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests?pivots=xunit#xunit-examples)
+See:__
+[xUnit - Running Tests in Parallel](https://xunit.net/docs/running-tests-in-parallel.html)__
+[Selective Unit Tests](https://learn.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests?pivots=xunit#xunit-examples)__
 [Speeding up Unit Test Execution in TFS](https://devblogs.microsoft.com/devops/speeding-up-unit-test-execution-in-tfs/)
 
 4. **Logging and Reporting**
@@ -104,8 +104,8 @@ For more complex scenarios we could try to chain together multiple API requests 
     This method allows us to enhance our application's performance by combining up to 20 requests in a single JSON object,
     with various modifiers to allow sequencing of requests.
 
-See:
-[How To Send Many Requests In Parallel In ASP.NET CORE](https://www.michalbialecki.com/2018/04/19/how-to-send-many-requests-in-parallel-in-asp-net-core/)
+See:__
+[How To Send Many Requests In Parallel In ASP.NET CORE](https://www.michalbialecki.com/2018/04/19/how-to-send-many-requests-in-parallel-in-asp-net-core/)__
 [JSON Batching](https://learn.microsoft.com/en-us/graph/json-batching)
 
 6. **Create a CI/CD pipeline**
@@ -115,5 +115,5 @@ triggered when merging new changes into the main branch of the repository. The p
 the solution, starting the web server, initiating test execution, saving and sharing the test report and cleaning up the
 test environment.
 
-See:
+See:__
 [Trigger Jenkins Build When Pull Request Is Merged In GitHub](https://stackoverflow.com/questions/64050510/trigger-jenkins-build-when-pull-request-is-merged-in-github)
