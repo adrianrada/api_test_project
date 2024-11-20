@@ -56,9 +56,9 @@ In order to mitigate this, we could use the following strategies:
     Group test suites into different sets based on test domain or priority and use different hosts to execute
     the newly created scenarios (either from command line or from a CI/CD environment)
 
-See:__
-[xUnit - Running Tests in Parallel](https://xunit.net/docs/running-tests-in-parallel.html)__
-[Selective Unit Tests](https://learn.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests?pivots=xunit#xunit-examples)__
+See:<br />
+[xUnit - Running Tests in Parallel](https://xunit.net/docs/running-tests-in-parallel.html)<br />
+[Selective Unit Tests](https://learn.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests?pivots=xunit#xunit-examples)<br />
 [Speeding up Unit Test Execution in TFS](https://devblogs.microsoft.com/devops/speeding-up-unit-test-execution-in-tfs/)
 
 4. **Logging and Reporting**
@@ -104,8 +104,8 @@ For more complex scenarios we could try to chain together multiple API requests 
     This method allows us to enhance our application's performance by combining up to 20 requests in a single JSON object,
     with various modifiers to allow sequencing of requests.
 
-See:__
-[How To Send Many Requests In Parallel In ASP.NET CORE](https://www.michalbialecki.com/2018/04/19/how-to-send-many-requests-in-parallel-in-asp-net-core/)__
+See:<br />
+[How To Send Many Requests In Parallel In ASP.NET CORE](https://www.michalbialecki.com/2018/04/19/how-to-send-many-requests-in-parallel-in-asp-net-core/)<br />
 [JSON Batching](https://learn.microsoft.com/en-us/graph/json-batching)
 
 6. **Create a CI/CD pipeline**
