@@ -44,7 +44,7 @@ and/or complexity of the test scenarios increases in time.
 
 In order to mitigate this, we could use the following strategies:
 
-    a) **Parallel execution**
+    a) Parallel execution
     
     Group test suites into separate collections by creating different test classes that would run parallel
     against each other.
@@ -54,7 +54,7 @@ In order to mitigate this, we could use the following strategies:
     See :
     [xUnit - Running Tests in Parallel](https://xunit.net/docs/running-tests-in-parallel.html)
 
-    b) **Distribute test executions to multiple machines**
+    b) Distribute test executions to multiple machines
 
     Group test suites into different sets based on test domain or priority and use different hosts to execute
     the newly created scenarios (either from command line or from a CI/CD environment)
@@ -86,22 +86,22 @@ dotnet test ApiTest.dll --logger:html
 
 For more complex scenarios we could try to chain together multiple API requests by using one of the following methods:
 
-    a) **Asynchronous calls**
+    a) Asynchronous calls
     
     Create methods with the async modifier and use await when parsing through an enumerable that contains different data
     that we want to send or query the server with.
 
-    b) **Running requests in parallel**
+    b) Running requests in parallel
 
     Using Task.WhenAll() method on tasks of the same type (can apply this method on batches of multiple requests for further
     optimization).
 
-    c) **Updating the API endpoint**
+    c) Updating the API endpoint
 
     We could also take into account optimizations at server side and create an endpoint that could handle multiple 
     simultaneous requests.
 
-    d) **Use JSON batching**
+    d) Use JSON batching
 
     This method allows us to enhance our application's performance by combining up to 20 requests in a single JSON object,
     with various modifiers to allow sequencing of requests.
