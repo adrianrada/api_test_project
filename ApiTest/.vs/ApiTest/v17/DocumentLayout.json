@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\bogda\\Documents\\PROJECTS\\api_test_project\\ApiTest\\",
+  "WorkspaceRootPath": "C:\\Users\\borada\\Documents\\PROJECTS\\api_test_project\\ApiTest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1F8E7BAF-C1A6-460A-8305-FB9A6A2C2591}|ApiTest.csproj|c:\\users\\bogda\\documents\\projects\\api_test_project\\apitest\\unittest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1F8E7BAF-C1A6-460A-8305-FB9A6A2C2591}|ApiTest.csproj|c:\\users\\borada\\documents\\projects\\api_test_project\\apitest\\unittest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1F8E7BAF-C1A6-460A-8305-FB9A6A2C2591}|ApiTest.csproj|solutionrelative:unittest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F8E7BAF-C1A6-460A-8305-FB9A6A2C2591}|ApiTest.csproj|c:\\users\\bogda\\documents\\projects\\api_test_project\\apitest\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1F8E7BAF-C1A6-460A-8305-FB9A6A2C2591}|ApiTest.csproj|c:\\users\\borada\\documents\\projects\\api_test_project\\apitest\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1F8E7BAF-C1A6-460A-8305-FB9A6A2C2591}|ApiTest.csproj|solutionrelative:apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F8E7BAF-C1A6-460A-8305-FB9A6A2C2591}|ApiTest.csproj|c:\\users\\borada\\documents\\projects\\api_test_project\\apitest\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{1F8E7BAF-C1A6-460A-8305-FB9A6A2C2591}|ApiTest.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,29 +22,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Readme.md",
+              "DocumentMoniker": "C:\\Users\\borada\\Documents\\PROJECTS\\api_test_project\\ApiTest\\Readme.md",
+              "RelativeDocumentMoniker": "Readme.md",
+              "ToolTip": "C:\\Users\\borada\\Documents\\PROJECTS\\api_test_project\\ApiTest\\Readme.md",
+              "RelativeToolTip": "Readme.md",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAA8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2024-11-20T15:25:35.963Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "ApiService.cs",
-              "DocumentMoniker": "C:\\Users\\bogda\\Documents\\PROJECTS\\api_test_project\\ApiTest\\ApiService.cs",
+              "DocumentMoniker": "C:\\Users\\borada\\Documents\\PROJECTS\\api_test_project\\ApiTest\\ApiService.cs",
               "RelativeDocumentMoniker": "ApiService.cs",
-              "ToolTip": "C:\\Users\\bogda\\Documents\\PROJECTS\\api_test_project\\ApiTest\\ApiService.cs",
+              "ToolTip": "C:\\Users\\borada\\Documents\\PROJECTS\\api_test_project\\ApiTest\\ApiService.cs",
               "RelativeToolTip": "ApiService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T21:52:44.389Z"
+              "WhenOpened": "2024-11-16T21:52:44.389Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "UnitTest.cs",
-              "DocumentMoniker": "C:\\Users\\bogda\\Documents\\PROJECTS\\api_test_project\\ApiTest\\UnitTest.cs",
+              "DocumentMoniker": "C:\\Users\\borada\\Documents\\PROJECTS\\api_test_project\\ApiTest\\UnitTest.cs",
               "RelativeDocumentMoniker": "UnitTest.cs",
-              "ToolTip": "C:\\Users\\bogda\\Documents\\PROJECTS\\api_test_project\\ApiTest\\UnitTest.cs",
+              "ToolTip": "C:\\Users\\borada\\Documents\\PROJECTS\\api_test_project\\ApiTest\\UnitTest.cs",
               "RelativeToolTip": "UnitTest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAtwHEAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-16T21:50:14.708Z",
               "EditorCaption": ""
